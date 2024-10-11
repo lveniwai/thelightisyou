@@ -1,0 +1,38 @@
+// Generate random number in a range
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Pick a random item from an array
+function randomItem(arr) {
+    return arr[getRandomInt(0, arr.length - 1)];
+}
+
+// Data for the diary entry generator
+const months = ["January", "July", "August"];
+const directions = ["south", "west", "east", "north", "hills", "low country"];
+const books = ["Plato", "Thucydides", "Epictetus", "Shakespeare", "Milton"];
+const phrases = [
+    "A great wind out of the ",
+    "The mule took sick in the night.",
+    "I am greatly ill at ease.",
+    "The sun is ungodly bright.",
+    "We shall never see her likes again.",
+    "Again I had that vexing dream.",
+    "Read some "
+];
+
+// Create the random diary entry
+function generateDiaryEntry() {
+    let diary = `${randomItem(months)} ${getRandomInt(1, 29)}<br>`;
+    diary += randomItem(phrases) + randomItem(directions) + ".<br>";
+    diary += randomItem(phrases) + "<br>";
+    diary += "Read " + randomItem(books) + ", but it brought me no solace.";
+
+    document.getElementById('diary').innerHTML = diary;
+}
+
+// Generate and insert the diary entry when the page loads
+window.onload = function() {
+    generateDiaryEntry();
+};
