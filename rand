@@ -1,0 +1,24 @@
+// Note: Text that comes after "//" is ignored, which allows you to write notes (like the one you're reading now!)
+font = {import:font-plugin}
+
+output
+	[font(diary, "Homemade Apple", "24px")]
+
+
+diary = {January|July|August} {1-29}<br>[entry]
+
+entry
+	A great {[b]|^2}wind out of the {south|west|east|north|hills|low country}.
+	The mule {[b]|^2}took sick in the night.
+	I am greatly ill {[b]|^2}at ease.
+	The sun is {[b]|^2}ungodly bright.
+	We shall {[b]|^2}never see her likes again.
+	Again I had that vexing dream.
+	{I r|R}ead{| some} {Plato|Thucydides|Epictetus|Shakespeare|Milton}, {[b]|^2}but {it|the words|the book|his {naive|pretty little} sentiments} {gave|brought}{ me|} no {comfort|solace}.
+
+
+//inserts random non-breaking spaces to simulate the rhythm of hand-writing
+b
+	&nbsp;
+	&nbsp; &nbsp;^0.5
+
